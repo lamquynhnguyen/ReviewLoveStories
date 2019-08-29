@@ -1,4 +1,4 @@
-package com.example.reviewlovestories
+package vn.sunasterisk.reviewlovestories
 
 import org.junit.Test
 
