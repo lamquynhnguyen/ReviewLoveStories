@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "763931286593",
+    "firebase_url": "https://review-love-stories.firebaseio.com",
+    "project_id": "review-love-stories",
+    "storage_bucket": "review-love-stories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763931286593:android:39856ca5749cfb62",
+        "android_client_info": {
+          "package_name": "vn.sunasterisk.reviewlovestories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763931286593-c0j0jg476krq3m3if8jnugtleate3c6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "YOUR_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763931286593-c0j0jg476krq3m3if8jnugtleate3c6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
