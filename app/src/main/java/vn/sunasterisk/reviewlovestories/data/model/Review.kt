@@ -3,7 +3,7 @@ package vn.sunasterisk.reviewlovestories.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "reviews")
 data class Review(
     @PrimaryKey(autoGenerate = true) var id: Int,
     var userName: String,
