@@ -6,10 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import vn.sunasterisk.reviewlovestories.data.model.Review
-import vn.sunasterisk.reviewlovestories.utils.ListConverter
+import vn.sunasterisk.reviewlovestories.utils.Converter
 
 @Database(entities = [Review::class], version = 1, exportSchema = false)
-@TypeConverters(ListConverter::class)
+@TypeConverters(Converter::class)
 abstract class ReviewRoomDatabase : RoomDatabase() {
     abstract fun reviewDao(): ReviewDao
 

@@ -1,5 +1,6 @@
 package vn.sunasterisk.reviewlovestories.data.source.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import vn.sunasterisk.reviewlovestories.data.model.Review
 
@@ -9,7 +10,7 @@ interface ReviewDao {
     fun insertReview(review: Review)
 
     @Query("SELECT * FROM reviews")
-    fun getAllReviews(): List<Review>
+    fun getAllReviews(): LiveData<List<Review>>
 
     @Update
     fun updateReview(review: Review)
