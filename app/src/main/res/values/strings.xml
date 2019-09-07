@@ -5,5 +5,13 @@
     <string name="title_create">Create</string>
     <string name="title_folder">Folder</string>
     <string name="title_account">Account</string>
+    <string name="title_your_email">Your Email</string>
+    <string name="title_password">Password</string>
+    <string name="title_forgot">Forgot password?</string>
+    <string name="title_log">Log In</string>
+    <string name="title_no_account">Don\'t have an account?</string>
+    <string name="title_username">Username</string>
+    <string name="title_sign">Sign Up</string>
+    <string name="title_back_log">Back to Log In</string>
 
 </resources>
