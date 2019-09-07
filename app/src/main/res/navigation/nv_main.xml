@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nv_main"
+    app:startDestination="@id/navigationHome">
+
+    <fragment
+        android:id="@+id/navigationAccount"
+        android:name="vn.sunasterisk.reviewlovestories.ui.AccountFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/navigationCategory"
+        android:name="vn.sunasterisk.reviewlovestories.ui.CategoryFragment"
+        android:label="@string/title_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/navigationFolder"
+        android:name="vn.sunasterisk.reviewlovestories.ui.FolderFragment"
+        android:label="@string/title_folder"
+        tools:layout="@layout/fragment_folder" />
+    <fragment
+        android:id="@+id/navigationHome"
+        android:name="vn.sunasterisk.reviewlovestories.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigationCreate"
+        android:name="vn.sunasterisk.reviewlovestories.ui.WritingFragment"
+        android:label="@string/title_create"
+        tools:layout="@layout/fragment_writing" />
+</navigation>

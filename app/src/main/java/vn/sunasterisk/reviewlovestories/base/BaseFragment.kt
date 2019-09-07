@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil.inflate
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -19,7 +18,7 @@ abstract class BaseFragment : Fragment() {
     ): View? {
         dataBinding = inflate<ViewDataBinding>(
             inflater,
-            getContentViewId(),
+            getContentViewId,
             container,
             false
         )
@@ -27,8 +26,7 @@ abstract class BaseFragment : Fragment() {
         return dataBinding.root
     }
 
-    @LayoutRes
-    abstract fun getContentViewId(): Int
+    abstract val getContentViewId: Int
 
     fun getDataBinding() = dataBinding
     fun isInternetConnected() = ConnectivityCheck.isConnectedToNetwork()

@@ -1,12 +1,13 @@
 package vn.sunasterisk.reviewlovestories.data.model
 
+import android.os.Parcelable
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
-import com.google.firebase.Timestamp
+import kotlinx.android.parcel.Parcelize
 import java.util.*
 
 @Entity(tableName = "reviews")
+@Parcelize
 data class Review(
     @PrimaryKey(autoGenerate = true) var id: Int = -1,
     var userName: String = "",
@@ -20,4 +21,4 @@ data class Review(
     var isShared: Boolean = false,
     var imageUrl: String = "",
     var uploadTime: Date? = null
-)
+) : Parcelable
