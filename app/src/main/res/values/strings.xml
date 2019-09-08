@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ReviewLoveStories</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_create">Create</string>
+    <string name="title_folder">Folder</string>
+    <string name="title_account">Account</string>
+
 </resources>
