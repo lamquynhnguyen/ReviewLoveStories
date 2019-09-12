@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="signInViewModel"
+            type="vn.sunasterisk.reviewlovestories.viewmodel.SignInViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,18 +43,19 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textInputLayoutPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/dp_8"
                 android:hint="@string/title_your_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:text="@={signInViewModel.email}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -58,17 +63,20 @@
             style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="@dimen/dp_8"
                 android:hint="@string/title_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:text="@={signInViewModel.password}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -76,6 +84,7 @@
             style="@style/TextItalic"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="@{()-> signInViewModel.onForgotPassword()}"
             android:text="@string/title_forgot"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +95,7 @@
             style="@style/ButtonLogSign"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="@{()-> signInViewModel.onAuthenticate()}"
             android:text="@string/title_log"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

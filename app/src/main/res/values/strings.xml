@@ -5,13 +5,23 @@
     <string name="title_create">Create</string>
     <string name="title_folder">Folder</string>
     <string name="title_account">Account</string>
-    <string name="title_your_email">Your Email</string>
-    <string name="title_password">Password</string>
-    <string name="title_forgot">Forgot password?</string>
-    <string name="title_log">Log In</string>
-    <string name="title_no_account">Don\'t have an account?</string>
-    <string name="title_username">Username</string>
-    <string name="title_sign">Sign Up</string>
-    <string name="title_back_log">Back to Log In</string>
+    <string name="title_your_email">Email</string>
+    <string name="title_password">Mật khẩu</string>
+    <string name="title_forgot">Quên mật khẩu?</string>
+    <string name="title_log">Đăng nhập</string>
+    <string name="title_no_account">Chưa có tài khoản?</string>
+    <string name="title_username">Tên tài khoản</string>
+    <string name="title_sign">Đăng ký</string>
+    <string name="title_back_log">Quay lại Đăng nhập</string>
+    <string name="title_logout">Thoát</string>
+    <string name="msg_incorrect_email">Email không hợp lệ</string>
+    <string name="msg_incorrect_password">Password không hợp lệ</string>
+    <string name="msg_signUp_fail">Đăng ký tài khoản không thành công</string>
+    <string name="msg_pass_reset">Password reset vừa được gửi tới email</string>
+    <string name="msg_signIn_fail">Đăng nhập không thành công</string>
+    <string name="msg_email_no_input">Bạn chưa nhập email</string>
+    <string name="msg_password_no_input">Bạn chưa nhập password</string>
+    <string name="msg_email_sent">Chúng tôi đã gửi một email xác nhận về tài khoản email của bạn</string>
+    <string name="msg_username_no_input">Bạn chưa nhập Username</string>
 
 </resources>
