@@ -12,4 +12,35 @@
         <item name="android:windowBackground">@drawable/bg_splashscreen</item>
     </style>
 
+    <style name="ButtonLogSign" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/color_primary_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:layout_margin">@dimen/dp_16</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_margin">@dimen/dp_16</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+    <style name="TextInSignInUp" parent="TextAppearance.AppCompat.Menu">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_margin">@dimen/dp_8</item>
+    </style>
+
+    <style name="TextItalic" parent="TextInSignInUp">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextSignUp" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:text">@string/title_sign</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/color_primary_dark</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_margin">@dimen/dp_8</item>
+    </style>
+
 </resources>

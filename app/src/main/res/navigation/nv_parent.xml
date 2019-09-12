@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nv_parent"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/parentFragment"
+        android:name="vn.sunasterisk.reviewlovestories.ui.ParentFragment"
+        android:label="fragment_parent"
+        tools:layout="@layout/fragment_parent" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="vn.sunasterisk.reviewlovestories.ui.SignInFragment"
+        android:label="SignInFragment">
+        <action
+            android:id="@+id/actionSignInToSignUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/actionSignInToParent"
+            app:destination="@id/parentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="vn.sunasterisk.reviewlovestories.ui.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/actionSignUpToParent"
+            app:destination="@id/parentFragment" />
+    </fragment>
+
+</navigation>
