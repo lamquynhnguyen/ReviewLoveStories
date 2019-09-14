@@ -21,7 +21,9 @@
     </style>
 
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:layout_margin">@dimen/dp_16</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
         <item name="android:textColorHint">@android:color/white</item>
     </style>
 

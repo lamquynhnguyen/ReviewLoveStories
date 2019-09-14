@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="signInViewModel"
+            type="vn.sunasterisk.reviewlovestories.viewmodel.SignInViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +29,7 @@
             app:titleTextColor="@android:color/white" />
 
         <fragment
-            android:id="@+id/navHostFragment"
+            android:id="@+id/navHostInParent"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -47,7 +51,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/navHostFragment"
+            app:layout_constraintTop_toBottomOf="@id/navHostInParent"
             app:layout_constraintVertical_bias="1.0"
             app:menu="@menu/menu_bottom_nav" />
 
