@@ -23,5 +23,7 @@
     <string name="msg_password_no_input">Bạn chưa nhập password</string>
     <string name="msg_email_sent">Chúng tôi đã gửi một email xác nhận về tài khoản email của bạn</string>
     <string name="msg_username_no_input">Bạn chưa nhập Username</string>
+    <string name="title_favorite_reviews">Reviews phổ biến</string>
+    <string name="title_latest_reviews">Reviews gần đây</string>
 
 </resources>
