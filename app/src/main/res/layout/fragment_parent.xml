@@ -18,8 +18,8 @@
         tools:context="vn.sunasterisk.reviewlovestories.MainActivity">
 
         <androidx.appcompat.widget.Toolbar
-            style="@style/Widget.AppCompat.Toolbar"
             android:id="@+id/toolbarMain"
+            style="@style/Widget.AppCompat.Toolbar"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,6 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
-            style="@style/Widget.Design.BottomNavigationView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:itemIconTint="@color/bottom_nav_colors"

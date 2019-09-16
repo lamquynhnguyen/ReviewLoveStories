@@ -16,7 +16,7 @@ class GenreViewModel(application: Application) : BaseViewModel(application) {
         get() = _reviewsByGenre
 
     private fun getReviewsByGenre(genreName: String) {
-        firestore.collection(ReviewType.REVIEWS)
+        fireStore.collection(ReviewType.REVIEWS)
             .whereArrayContains(ReviewType.GENRES, genreName)
             .get()
             .addOnSuccessListener { reviews ->

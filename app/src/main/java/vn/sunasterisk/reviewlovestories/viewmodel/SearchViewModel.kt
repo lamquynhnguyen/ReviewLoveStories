@@ -16,7 +16,7 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
         get() = _isLoadSuccess
 
     private fun searchReviewByNovelName(novelSearch: String) {
-        firestore.collection(ReviewType.REVIEWS)
+        fireStore.collection(ReviewType.REVIEWS)
             .whereEqualTo(ReviewType.NOVEL_NAME, novelSearch)
             .get()
             .addOnSuccessListener { reviews ->
@@ -29,7 +29,7 @@ class SearchViewModel(application: Application) : BaseViewModel(application) {
     }
 
     private fun searchReviewByAuthorName(authorSearch: String) {
-        firestore.collection(ReviewType.REVIEWS)
+        fireStore.collection(ReviewType.REVIEWS)
             .whereEqualTo(ReviewType.AUTHOR_NAME, authorSearch)
             .get()
             .addOnSuccessListener { reviews ->

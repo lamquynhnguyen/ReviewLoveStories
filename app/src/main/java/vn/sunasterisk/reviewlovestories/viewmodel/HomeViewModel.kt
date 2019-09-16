@@ -15,33 +15,46 @@ class HomeViewModel(application: Application) : BaseViewModel(application) {
     private val _reviewsByHeart = MutableLiveData<List<Review>>()
     val reviewsByHeart: LiveData<List<Review>>
         get() = _reviewsByHeart
-    private val _isLoadSuccess = MutableLiveData<Boolean>()
-    val isLoadSuccess: LiveData<Boolean>
-        get() = _isLoadSuccess
+    private val _isLoadFavoriteSuccess = MutableLiveData<Boolean>()
+    val isLoadFavoriteSuccess: LiveData<Boolean>
+        get() = _isLoadFavoriteSuccess
+    private val _isLoadLatestSuccess = MutableLiveData<Boolean>()
+    val isLoadLatestSuccess: LiveData<Boolean>
+        get() = _isLoadLatestSuccess
 
-    private fun getReviewsByTime() {
-        firestore.collection(ReviewType.REVIEWS)
+    init {
+        fireStore.firestoreSettings = settings
+        getReviewsByHeartLimitTen()
+        getReviewsByTimeLimitTen()
+    }
+
+    private fun getReviewsByTimeLimitTen() {
+        fireStore.collection(ReviewType.REVIEWS)
             .orderBy(ReviewType.UPLOAD_TIME, Query.Direction.DESCENDING)
+            .limit(LIMIT_QUERY_REVIEW)
             .get()
             .addOnSuccessListener { reviews ->
-                _isLoadSuccess.value = true
                 _reviewsByTime.value = reviews.toObjects(Review::class.java)
+                _isLoadLatestSuccess.value = true
             }
             .addOnFailureListener {
-                _isLoadSuccess.value = false
             }
     }
 
-    private fun getReviewsByHeart() {
-        firestore.collection(ReviewType.REVIEWS)
+    private fun getReviewsByHeartLimitTen() {
+        fireStore.collection(ReviewType.REVIEWS)
             .orderBy(ReviewType.HEART_COUNT, Query.Direction.DESCENDING)
+            .limit(LIMIT_QUERY_REVIEW)
             .get()
             .addOnSuccessListener { reviews ->
-                _isLoadSuccess.value = true
                 _reviewsByHeart.value = reviews.toObjects(Review::class.java)
+                _isLoadFavoriteSuccess.value = true
             }
             .addOnFailureListener {
-                _isLoadSuccess.value = false
             }
+    }
+
+    companion object {
+        private const val LIMIT_QUERY_REVIEW = 5L
     }
 }

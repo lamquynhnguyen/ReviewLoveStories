@@ -5,16 +5,20 @@
 
     <data>
 
+        <variable
+            name="homeViewModel"
+            type="vn.sunasterisk.reviewlovestories.viewmodel.HomeViewModel" />
+
     </data>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_background"
+            android:background="@android:color/white"
             android:orientation="vertical"
             tools:context=".ui.HomeFragment"
             tools:ignore="ContentDescription">
@@ -41,18 +45,32 @@
                     style="@style/TextSignUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_expand_more"
-                    app:layout_constraintBottom_toTopOf="@id/recyclerFavoriteReview"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:src="@drawable/ic_more_horiz"
+                    app:layout_constraintBottom_toBottomOf="@id/textFavoriteReview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textFavoriteReview" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_190"
+                    android:layout_marginBottom="@dimen/dp_190"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textFavoriteReview" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerFavoriteReview"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textFavoriteReview"
-                    app:spanCount="2"
                     tools:listitem="@layout/item_review" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -61,7 +79,7 @@
                 android:id="@+id/constraintLatest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_4"
+                android:layout_margin="@dimen/dp_8"
                 android:background="@android:color/white">
 
                 <TextView
@@ -79,22 +97,35 @@
                     style="@style/TextSignUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_expand_more"
-                    app:layout_constraintBottom_toTopOf="@id/recyclerLatestReview"
+                    android:src="@drawable/ic_more_horiz"
+                    app:layout_constraintBottom_toBottomOf="@id/textLatestReview"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@id/textLatestReview" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarLatest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_190"
+                    android:layout_marginBottom="@dimen/dp_190"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textLatestReview" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerLatestReview"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textLatestReview"
-                    app:spanCount="2"
                     tools:listitem="@layout/item_review" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>

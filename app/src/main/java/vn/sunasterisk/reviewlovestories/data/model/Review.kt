@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import java.text.SimpleDateFormat
 import java.util.*
 
 @Entity(tableName = "reviews")
@@ -15,10 +16,15 @@ data class Review(
     var authorName: String = "",
     var genres: List<String> = mutableListOf(),
     var heartCount: Int = 0,
-    var plotMark: Float = 0F,
-    var mainCharMark: Float = 0F,
     var contentReview: String = "",
     var isShared: Boolean = false,
-    var imageUrl: String = "",
-    var uploadTime: Date? = null
-) : Parcelable
+    var uploadTime: Date? = null,
+    var imageUrl: String = ""
+) : Parcelable {
+    fun toSimpleString(date: Date): String {
+        val format = SimpleDateFormat.getDateInstance()
+        return format.format(date)
+    }
+
+    fun fromNumberToString(number: Int): String = number.toString()
+}

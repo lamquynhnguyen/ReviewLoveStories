@@ -1,94 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/dp_190"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp_8"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="@dimen/dp_8"
-    app:cardElevation="0dp"
-    tools:ignore="ContentDescription">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+    <data>
+
+        <variable
+            name="review"
+            type="vn.sunasterisk.reviewlovestories.data.model.Review" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageUser"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/dp_4"
+            tools:ignore="ContentDescription">
 
-        <TextView
-            android:id="@+id/textTitle"
-            style="@style/TextAppearance.AppCompat.Menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageUser"
-            app:layout_constraintTop_toTopOf="@id/imageUser"
-            tools:text="@tools:sample/full_names" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textUsername"
-            style="@style/TextAppearance.AppCompat.Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_8"
-            android:layout_marginEnd="@dimen/dp_8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageUser"
-            app:layout_constraintTop_toBottomOf="@id/textTitle"
-            tools:text="@tools:sample/cities" />
+                <ImageView
+                    android:id="@+id/imageUser"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_margin="@dimen/dp_8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    bind:imageUrl="@{review.imageUrl}"
+                    tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/textContent"
-            style="@style/TextAppearance.AppCompat.Caption"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_8"
-            android:ellipsize="end"
-            android:maxLines="5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/imageUser"
-            app:layout_constraintTop_toBottomOf="@id/textHeartCount"
-            tools:text="@tools:sample/lorem/random" />
+                <TextView
+                    android:id="@+id/textTitle"
+                    style="@style/TextAppearance.AppCompat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{review.novelName}"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageUser"
+                    app:layout_constraintTop_toTopOf="@id/imageUser"
+                    tools:text="@tools:sample/full_names" />
 
-        <TextView
-            android:id="@+id/textTime"
-            style="@style/TextAppearance.Compat.Notification.Time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageUser"
-            app:layout_constraintTop_toTopOf="@id/textHeartCount"
-            tools:text="@tools:sample/date/ddmmyy" />
+                <TextView
+                    android:id="@+id/textUsername"
+                    style="@style/TextAppearance.Compat.Notification.Info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:text="@{review.userName}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageUser"
+                    app:layout_constraintTop_toBottomOf="@id/textTitle"
+                    tools:text="@tools:sample/cities" />
 
-        <TextView
-            android:id="@+id/textHeartCount"
-            style="@style/TextAppearance.Compat.Notification.Info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_4"
-            app:layout_constraintStart_toStartOf="@id/imageUser"
-            app:layout_constraintTop_toBottomOf="@id/imageUser"
-            tools:text="@tools:sample/date/day_of_week" />
 
-        <ImageView
-            android:id="@+id/imageHeart"
-            android:layout_width="@dimen/dp_16"
-            android:layout_height="@dimen/dp_16"
-            app:layout_constraintStart_toEndOf="@id/textHeartCount"
-            app:layout_constraintTop_toTopOf="@id/textHeartCount"
-            app:srcCompat="@drawable/ic_favorite_border" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textContent"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:ellipsize="end"
+                    android:maxLines="5"
+                    android:text="@{review.contentReview}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textTime"
+                    tools:text="@tools:sample/lorem/random" />
 
-</androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/textTime"
+                    style="@style/TextAppearance.Compat.Notification.Time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{review.toSimpleString(review.uploadTime)}"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="@id/textHeartCount"
+                    app:layout_constraintStart_toEndOf="@id/imageUser"
+                    app:layout_constraintTop_toBottomOf="@id/textUsername"
+                    tools:text="@tools:sample/date/ddmmyy" />
+
+                <TextView
+                    android:id="@+id/textHeartCount"
+                    style="@style/TextAppearance.Compat.Notification.Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_4"
+                    android:text="@{review.fromNumberToString(review.heartCount)}"
+                    app:layout_constraintEnd_toStartOf="@id/imageHeart"
+                    app:layout_constraintTop_toTopOf="@id/textUsername"
+                    tools:text="@tools:sample/date/day_of_week" />
+
+                <ImageView
+                    android:id="@+id/imageHeart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:src="@drawable/ic_favorite_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textUsername" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

@@ -22,8 +22,8 @@ class WriteViewModel(application: Application) : BaseViewModel(application) {
 
     private fun insertReviewToFirestore(review: Review) {
         val updateTimeStamp = hashMapOf<String, Any>(ReviewType.UPLOAD_TIME to FieldValue.serverTimestamp())
-        val batch = firestore.batch()
-        val refReview = firestore.collection(ReviewType.REVIEWS)
+        val batch = fireStore.batch()
+        val refReview = fireStore.collection(ReviewType.REVIEWS)
             .document("${review.novelName} - ${review.authorName} - ${review.userName}")
         batch.set(refReview, review)
         batch.update(refReview, updateTimeStamp)
