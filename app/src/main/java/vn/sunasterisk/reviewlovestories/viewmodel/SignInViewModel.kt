@@ -31,8 +31,6 @@ class SignInViewModel(application: Application) : BaseViewModel(application) {
         get() = _isPasswordInputted
 
     init {
-        _isEmailInputted.value = true
-        _isPasswordInputted.value = true
         _authenticationState.value = AuthenticationState.UNAUTHENTICATED
     }
 
@@ -40,29 +38,38 @@ class SignInViewModel(application: Application) : BaseViewModel(application) {
         when {
             email.value.isNullOrEmpty() -> _isEmailInputted.value = false
             password.value.isNullOrEmpty() -> _isPasswordInputted.value = false
-            else -> fireBaseAuth.signInWithEmailAndPassword(email.value!!, password.value!!)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        _authenticationState.value = if (fireBaseAuth.currentUser!!.isEmailVerified)
-                            AuthenticationState.AUTHENTICATED
-                        else
-                            AuthenticationState.INVALID_AUTHENTICATION
-                    } else {
-                        _authenticationState.value = AuthenticationState.INVALID_AUTHENTICATION
+            else -> {
+                fireBaseAuth.signInWithEmailAndPassword(email.value!!, password.value!!)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            _authenticationState.value = if (fireBaseAuth.currentUser!!.isEmailVerified)
+                                AuthenticationState.AUTHENTICATED
+                            else
+                                AuthenticationState.INVALID_AUTHENTICATION
+                        } else {
+                            _authenticationState.value = AuthenticationState.INVALID_AUTHENTICATION
+                        }
                     }
-                }
+                _isEmailInputted.value = true
+                _isPasswordInputted.value = true
+            }
         }
     }
 
     fun onForgotPassword() {
         when {
             email.value.isNullOrEmpty() -> _isEmailInputted.value = false
-            else -> fireBaseAuth.sendPasswordResetEmail(email.value!!)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        _isSentPassReset.value = true
+            else -> {
+                fireBaseAuth.sendPasswordResetEmail(email.value!!)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            _isSentPassReset.value = true
+                        }
                     }
-                }
+                _isEmailInputted.value = true
+                _isSentPassReset.value = false
+            }
         }
     }
 }
+
